@@ -1,0 +1,32 @@
+int sensorLDR=A0;
+int SSR12V=14;
+int SSR9V=15;
+
+void setup()
+{
+pinMode(SSR12V,  OUTPUT);
+pinMode(SSR9V,   OUTPUT);
+pinMode(sensorLDR,   INPUT);
+}
+
+void loop (){
+
+// When Night time [sensorLDR == HIGH] So, 9 volt activated -->  light Up dim  
+
+if(digitalRead(sensorLDR)==HIGH)
+{delay(300);
+ digitalWrite(SSR12V,LOW);
+ delay(100); // safe store delay
+ digitalWrite(SSR9V,HIGH);
+}
+
+// When Day time [sensorLDR == LOW] So, 12 volt activated -->  light Up Bright
+
+if(digitalRead(sensorLDR)==LOW)
+{delay(300);
+ digitalWrite(SSR9V,LOW);
+ delay(100); // safe store delay
+ digitalWrite(SSR12V,HIGH);
+}  
+}
+  
