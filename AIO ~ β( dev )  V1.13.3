@@ -1,11 +1,11 @@
-int sensoArTop=A0;  // (GF) sensorTop means IR senor which will be installed on the bottom most step 
+int sensorTop=A0;  // (GF) sensorTop means IR senor which will be installed on the bottom most step 
 int sensorBottum=A7;  // (FF) sensorBottum means IR senor which will be installed on the top most step
+int button=A3;
 int Relay1=53;   // (GF) Represents Led on Step ~ 1+2 
 int Relay2=51;
 int Relay3=49;
 int Relay4=47;
 int Relay5=45;
-int Relay6=43; 
 int Relay7=41;
 int Relay8=39;
 int Relay9=37;
@@ -15,12 +15,12 @@ void setup()
 { 
   pinMode(sensorTop,   INPUT);
   pinMode(sensorBottum,INPUT);
+  pinMode(button,INPUT);
   pinMode(Relay1, OUTPUT);
   pinMode(Relay2, OUTPUT);
   pinMode(Relay3, OUTPUT);
   pinMode(Relay4, OUTPUT);
   pinMode(Relay5, OUTPUT);
-  pinMode(Relay6, OUTPUT);
   pinMode(Relay7, OUTPUT);
   pinMode(Relay8, OUTPUT);
   pinMode(Relay9, OUTPUT); 
@@ -60,8 +60,6 @@ if(digitalRead(sensorTop)==HIGH)
   delay(1800);
   digitalWrite(Relay5,HIGH);
   delay(1800);
-  digitalWrite(Relay6,HIGH);
-  delay(1800);
   digitalWrite(Relay7,HIGH);
   delay(1800);
   digitalWrite(Relay8,HIGH);
@@ -82,8 +80,6 @@ if(digitalRead(sensorTop)==HIGH)
   delay(500);
   digitalWrite(Relay5,LOW);
   delay(500);
-  digitalWrite(Relay6,LOW);
-  delay(500);
   digitalWrite(Relay7,LOW);
   delay(500);
   digitalWrite(Relay8,LOW);
@@ -98,7 +94,6 @@ else
  digitalWrite(Relay3,LOW);
  digitalWrite(Relay4,LOW);
  digitalWrite(Relay5,LOW);
- digitalWrite(Relay6,LOW);
  digitalWrite(Relay7,LOW);
  digitalWrite(Relay8,LOW);
  digitalWrite(Relay9,LOW);
@@ -116,8 +111,6 @@ else
   digitalWrite(Relay8,HIGH);
   delay(1800);
   digitalWrite(Relay7,HIGH);
-  delay(1800);
-  digitalWrite(Relay6,HIGH);
   delay(1800);
   digitalWrite(Relay5,HIGH);
   delay(1800);
@@ -139,8 +132,6 @@ else
   delay(500);
   digitalWrite(Relay7,LOW);
   delay(500);
-  digitalWrite(Relay6,LOW);
-  delay(500);
   digitalWrite(Relay5,LOW);
   delay(500);
   digitalWrite(Relay4,LOW);
@@ -157,13 +148,10 @@ else
   digitalWrite(Relay9,LOW);
   digitalWrite(Relay8,LOW);
   digitalWrite(Relay7,LOW);
-  digitalWrite(Relay6,LOW);
   digitalWrite(Relay5,LOW);
   digitalWrite(Relay4,LOW);
   digitalWrite(Relay3,LOW);
   digitalWrite(Relay2,LOW);
   digitalWrite(Relay1,LOW);
-  
-  }
- 
+  } 
 }
